@@ -8,8 +8,7 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install:
-          build: npm run build # run a custom app build step
+      - cypress/install
       - cypress/run:
           requires:
             - cypress/install
