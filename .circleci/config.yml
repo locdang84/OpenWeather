@@ -8,4 +8,12 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run # "run" job comes from "cypress" orb
+      - cypress/install
+      - cypress/run: # "run" job comes from "cypress" orb
+          parallel: true # split all specs across machines
+          parallelism: 2 # use 2 CircleCI machines to finish quickly
+          group: 2
+      - store_test_results:
+          path: /reporters
+      - store_artifacts:
+          path: /reporters
