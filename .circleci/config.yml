@@ -8,13 +8,17 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run: # "run" job comes from "cypress" orb
+      - cypress/install:
+          build: npm run build # run a custom app build step
+      - cypress/run:
+          requires:
+            - cypress/install
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 2 # use 2 CircleCI machines to finish quickly
           group: 2 machines
           post-steps:
             - store_test_results:
-                path: reporters
+                path: .\reporters
             - store_artifacts:
-                path: reporters
+                path: .\reporters
