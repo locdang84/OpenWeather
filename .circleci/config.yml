@@ -1,14 +1,11 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
-
 orbs:
-  node: circleci/node@4.1
-
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
+  cypress: cypress-io/cypress@1
 workflows:
-  sample:
+  build:
     jobs:
-      - node/test:
-          version: '15.1'
-          # This is the node version to use for the `cimg/node` tag
-          # Relevant tags can be found on the CircleCI Developer Hub
-          # https://circleci.com/developer/images/image/cimg/node
+      - cypress/run # "run" job comes from "cypress" orb
