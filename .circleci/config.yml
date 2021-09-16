@@ -8,16 +8,11 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install
       - cypress/run:
-          requires:
-            - cypress/install
           yarn: true
           parallel: true # split all specs across machines
-          parallelism: 2 # use 2 CircleCI machines to finish quickly
-          group: 2 machines
+          parallelism: 4 # use 4 CircleCI machines to finish quickly
+          group: 4 machines
           post-steps:
-            - store_test_results:
-                path: .\reporters
-            - store_artifacts:
-                path: .\reporters
+            - store_test_results: true
+            - store_artifacts: true
