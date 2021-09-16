@@ -13,6 +13,5 @@ workflows:
           parallel: true # split all specs across machines
           parallelism: 4 # use 4 CircleCI machines to finish quickly
           group: 4 machines
-          post-steps:
-            - store_test_results: true
-            - store_artifacts: true
+          store_test_results: true
+          store_artifacts: true
