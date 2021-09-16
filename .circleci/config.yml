@@ -8,6 +8,4 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run: # "run" job comes from "cypress" orb
-          executor: cypress/base-8
-          start: 'npm start' # start server before running tests
+      - cypress/run # "run" job comes from "cypress" orb
