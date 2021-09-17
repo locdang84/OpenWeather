@@ -13,7 +13,7 @@
     "mochawesome-report-generator": "^5.2.0"
   },
   "scripts": {
-    "clean:reports": "mkdir cypress\\reports && mkdir cypress\\reports\\mocha && mkdir cypress\\reports\\mochareports",
+    "clean:reports": "del cypress\\reports\\mocha\\*.json",
     "pretest": "npm run clean:reports",
     "scripts": "cypress run",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
