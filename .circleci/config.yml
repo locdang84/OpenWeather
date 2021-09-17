@@ -18,4 +18,4 @@ workflows:
           group: 4 machines
           post-steps:
             - store_artifacts:
-                path: reports
+                path: cypress\reports\mochareports
