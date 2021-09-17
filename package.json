@@ -13,5 +13,11 @@
   },
   "author": "",
   "license": "ISC",
-  "reporter": "mochawesome"
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "charts": true,
+    "overwrite": false,
+    "html": true,
+    "json": true
+   }
 }
