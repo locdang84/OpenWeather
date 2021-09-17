@@ -5,11 +5,13 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^8.4.0"
+    "cypress": "^8.4.0",
+    "mochawesome": "^6.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "reporter": "mochawesome"
 }

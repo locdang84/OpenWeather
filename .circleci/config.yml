@@ -8,9 +8,16 @@ orbs:
 workflows:
   build:
     jobs:
+      - cypress/install
       - cypress/run:
+          requires:
+            - cypress/install
           yarn: true
           parallel: true # split all specs across machines
-          parallelism: 4 # use 4 CircleCI machines to finish quickly
+          parallelism: 4 # use 2 CircleCI machines to finish quickly
           group: 4 machines
-          store_artifacts: true
+          post-steps:
+            - store_test_results:
+                path: mochawesome-report
+            - store_artifacts:
+                path: mochawesome-report
