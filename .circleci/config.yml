@@ -17,5 +17,5 @@ workflows:
           parallelism: 4 # use 2 CircleCI machines to finish quickly
           group: 4 machines
           post-steps:
-            - store_test_results:
-                path: reporters
+            - store_artifacts:
+                path: reports
