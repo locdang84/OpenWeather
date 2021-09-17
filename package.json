@@ -9,15 +9,20 @@
     "mochawesome": "^6.2.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cleanup": "del -fr cypress/reports/mochawesome-report",
+    "merge_reports": "npx mochawesome-merge cypress/reports/mochawesome-report/*.json > output.json",
+    "mochawesome_report": "marge --reportDir cypress/reports/mochawesome-html-report -t Cypress_Test_Report -p Cypress_HMTL_Report -f Cypress_HMTL_Report --timestamp mmddyyyy_HHMMss --charts true output.json",
+    "cy:report": "cypress run --reporter mochawesome && npm run merge_reports && npm run mochawesome_report"
   },
   "author": "",
   "license": "ISC",
   "reporter": "mochawesome",
   "reporterOptions": {
-    "charts": true,
+    "reportDir": "cypress/reports/mochawesome-report",
     "overwrite": false,
-    "html": true,
-    "json": true
-   }
+    "html": false,
+    "json": true,
+    "timestamp": "mmddyyyy_HHMMss"
+  }
 }

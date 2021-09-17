@@ -18,6 +18,4 @@ workflows:
           group: 4 machines
           post-steps:
             - store_test_results:
-                path: mochawesome-report
-            - store_artifacts:
-                path: mochawesome-report
+                path: reporters
