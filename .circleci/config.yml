@@ -17,7 +17,7 @@ workflows:
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/browsers:node14.17.0-chrome91-ff89
+          executor: cypress/browsers-chrome91-ff89
           browser: chrome
           post-steps:
             - store_artifacts:
@@ -32,7 +32,7 @@ workflows:
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/browsers:node14.17.0-chrome91-ff89
+          executor: cypress/browsers-chrome91-ff89
           browser: firefox
           post-steps:
             - store_artifacts:
