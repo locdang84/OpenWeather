@@ -15,7 +15,7 @@ workflows:
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/browsers-chrome73-ff68
+          executor: cypress/browsers-chrome78-ff70
           group: chrome
           browser: chrome
           post-steps:
@@ -29,7 +29,7 @@ workflows:
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/browsers-chrome73-ff68
+          executor: cypress/browsers-chrome78-ff70
           group: firefox
           browser: firefox
           post-steps:
