@@ -8,18 +8,16 @@ orbs:
 workflows:
   build:
     jobs:
-      Installing Cypress:
       - cypress/install
       #...
-      Run Cypress in Chrome:
       - cypress/run:
+          name: Run in Chrome
           requires:
             - cypress/install
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/browsers-chrome78-ff70
-          group: chrome
+          executor: cypress/browsers:node14.17.0-chrome91-ff89
           browser: chrome
           post-steps:
             - store_artifacts:
@@ -27,15 +25,14 @@ workflows:
             - store_artifacts:
                 path: cypress/videos
       #...
-      Run Cypress in Firefox:
       - cypress/run:
+          name: Run in Firefox
           requires:
             - cypress/install
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/browsers-chrome78-ff70
-          group: firefox
+          executor: cypress/browsers:node14.17.0-chrome91-ff89
           browser: firefox
           post-steps:
             - store_artifacts:
