@@ -17,7 +17,7 @@ workflows:
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/base-14
+          executor: cypress/browsers-chrome78-ff70
           browser: chrome
           post-steps:
             - store_artifacts:
@@ -26,14 +26,14 @@ workflows:
                 path: cypress/videos
       #...
       - cypress/run:
-          name: Run in Firefox
+          name: Run in Electron
           requires:
             - cypress/install
           yarn: true
           parallel: true # split all specs across machines
           parallelism: 4 # use 2 CircleCI machines to finish quickly
-          executor: cypress/base-14
-          browser: firefox
+          executor: cypress/browsers-chrome78-ff70
+          browser: electron
           post-steps:
             - store_artifacts:
                 path: cypress/screenshots
