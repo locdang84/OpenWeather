@@ -11,7 +11,7 @@ workflows:
       - cypress/install
       #...
       - cypress/run:
-          name: Run in Chrome
+          name: Run in chrome
           requires:
             - cypress/install
           yarn: true
@@ -26,7 +26,7 @@ workflows:
                 path: cypress/videos
       #...
       - cypress/run:
-          name: Run in Electron
+          name: Run in electron
           requires:
             - cypress/install
           yarn: true
