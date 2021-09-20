@@ -1,0 +1,38 @@
+{
+  "main": {
+    "cityQuery": "Ha Noi",
+    "countryISO": "VN",
+    "lat": 21,
+    "long": 105,
+    "temp": 0,
+    "expectedResultLength" : 1,
+    "cityId": 1581130
+  },
+  "multipleResult": {
+    "cityQuery": "Manchester",
+    "countryISO": "GB",
+    "lat": 0,
+    "long": 0,
+    "temp": 0,
+    "expectedResultLength" : 5,
+    "cityId": 0
+  },
+  "countryISOQuery": {
+    "cityQuery": "Manchester",
+    "countryISO": "GB",
+    "lat": 0,
+    "long": 0,
+    "temp": 0,
+    "expectedResultLength" : 2,
+    "cityId": 0
+  },
+  "emptyResult": {
+    "cityQuery": "nocity",
+    "countryISO": "VN",
+    "lat": 0,
+    "long": 0,
+    "temp": 0,
+    "expectedResultLength" : 0,
+    "cityId": 0
+  }
+}

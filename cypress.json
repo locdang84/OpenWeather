@@ -1,4 +1,5 @@
 {
+    "defaultCommandTimeout": 10000,
     "reporter": "cypress-multi-reporters",
         "reporterOptions": {
             "reporterEnabled": "mochawesome",
@@ -9,5 +10,7 @@
                 "html": false,
                 "json": true
             }
-        }
+        },
+    "viewportWidth": 1280,
+    "viewportHeight": 720
 }
