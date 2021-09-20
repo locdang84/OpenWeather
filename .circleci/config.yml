@@ -8,7 +8,10 @@ orbs:
 workflows:
   build:
     jobs:
+      Installing Cypress:
       - cypress/install
+      #...
+      Run Cypress in Chrome:
       - cypress/run:
           requires:
             - cypress/install
@@ -23,6 +26,8 @@ workflows:
                 path: cypress/screenshots
             - store_artifacts:
                 path: cypress/videos
+      #...
+      Run Cypress in Firefox:
       - cypress/run:
           requires:
             - cypress/install
